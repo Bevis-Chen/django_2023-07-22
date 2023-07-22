@@ -6,10 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Register</h1>
+    <h1>Register</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">註冊</button>
+    </form>
+    <h4>
+        <p style="color: brown;">
+            {{message}}
+        </p>
+    </h4>
+
 </body>
 
 </html>
