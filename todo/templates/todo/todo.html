@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+代辦事項頁面
+{% endblock %}
+
+{% block content %}
+
+<h3>ToDoList</h3>
+{% if todos %}
+{% for todo in todos %}
+<ul>
+    <li>{{todo.id}}</li>
+    <li>{{todo.title}}</li>
+    <li>{{todo.text}}</li>
+    <li>{{todo.created}}</li>
+    <li>{{todo.important}}</li>
+</ul>
+{% endfor %}
+{% else %}
+目前無代辦事項
+{% endif %}
+{% endblock %}
