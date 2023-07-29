@@ -6,6 +6,7 @@
 {% block content %}
 
 <h3>ToDoList</h3>
+{{request.user}}
 {% if todos %}
 {% for todo in todos %}
 <ul>
@@ -20,6 +21,9 @@
         重要
         <!-- {{todo.important}} -->
         {% endif %}
+    </li>
+    <li>
+        <a href=""></a>
     </li>
 </ul>
 

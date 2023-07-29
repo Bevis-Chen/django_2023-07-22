@@ -6,6 +6,7 @@ class Todo(models.Model):
     title= models.CharField(max_length= 100)
     text= models.TextField(blank= True)
     created= models.DateTimeField(auto_now_add= True)
+    completed= models.BooleanField(default= False)
     date_complated= models.DateTimeField(blank= True, null= True)
     important= models.BooleanField(default= False)
     image= models.ImageField(null= True, blank= True)

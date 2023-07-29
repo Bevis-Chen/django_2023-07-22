@@ -1,14 +1,16 @@
-from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.shortcuts import redirect, render
 from django.contrib.auth import login , logout, authenticate
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def user_logout(request):
     logout(request)
     return redirect("login")
 
-
+@login_required
 def user_profile(request):
     user= request.user
     return render(request, "./user/profile.html", {"user":user})
@@ -31,6 +33,7 @@ def user_login(request):
             user= authenticate(username= username, password= password)
             # print(user)
             if user is not None:
+                login(request,user)
                 message= "登入成功!"
                 return redirect("todo")
             else:
