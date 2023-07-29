@@ -26,7 +26,7 @@ def create(request):
     form = TodoForm()
     if request.method == "POST":
         print(request.POST)
-        form= TodoForm(request.POST)
+        form= TodoForm(request.POST, request.FILES)
         if form.is_valid():
             todo= form.save(commit= False)
             todo.user= request.user
