@@ -9,12 +9,20 @@
 {% if todos %}
 {% for todo in todos %}
 <ul>
-    <li>{{todo.id}}</li>
-    <li>{{todo.title}}</li>
-    <li>{{todo.text}}</li>
-    <li>{{todo.created}}</li>
-    <li>{{todo.important}}</li>
+    <li><small>{{todo.created}}</small></li>
+    <li>
+        <a href="{% url 'view' todo.id %}">
+            {{todo.id}}</a>
+    </li>
+    <!-- <li>{{todo.title}}</li> -->
+    <li>
+        {% if todo.important %}
+        重要
+        <!-- {{todo.important}} -->
+        {% endif %}
+    </li>
 </ul>
+
 {% endfor %}
 {% else %}
 目前無代辦事項

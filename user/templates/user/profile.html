@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
     <meta charset="UTF-8">
@@ -43,15 +43,13 @@
         {% endif %}
     </li>
 
-
     <li> 最後登入時間: {{user.last_login}}</li>
 
     <li> 超級管理員: {{user.is_superuser}}</li>
     {% else %}
-    <a href="{% url 'login' %}">登入</a>
-    <a href="{% url 'register' %}">註冊</a>
-
-
+    <h4>請先登入或註冊</h4>
+    <!-- <a href="{% url 'login' %}">登入</a>
+    <a href="{% url 'register' %}">註冊</a> -->
     {% endif %}
 </body>
 

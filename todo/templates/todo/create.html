@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+單一事項頁面
+{% endblock %}
+
+{% block content %}
+<h1>CreateTodo</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">新增</button>
+</form>
+{% endblock %}

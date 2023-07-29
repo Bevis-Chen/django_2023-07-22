@@ -22,4 +22,6 @@ urlpatterns = [
     # path("login/", views.user_login, name= "login"), 
     # path("logout/", views.user_logout, name= "logout"),
     path("", views.todo, name= "todo"),
+    path("view/<int:id>", views.view, name= "view"),
+    path("create/", views.create, name= "create"),
 ]

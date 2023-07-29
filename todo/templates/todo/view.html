@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}
+單一事項頁面
+{% endblock %}
+
+{% block content %}
+<h1>
+    ViewTodo
+</h1>
+
+{% if todo %}
+<li>
+    <small>
+        {{todo.created}}
+        {% if todo.important %}
+        重要
+        {% endif %}
+    </small>
+</li>
+<li>
+    {{todo.title}}
+</li>
+
+{% if todo.text %}
+{{todo.text|linebreaks}}
+{% else %}
+無內容
+{% endif %}
+
+<li>
+    {% if not todo.date_completed %}
+    未完成....
+    {% else %}
+    完成時間:
+    {{todo.date_completed}}
+    {% endif %}
+</li>
+{% endif %}
+
+{% if user.is_authenticated %}
+<hr>
+<h2>
+    修改事項
+</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <!-- <button type="submit">修改</button> -->
+
+    <input type="submit" name="update" value="修改">修改</input>
+    <input type="submit" name="delete" value="刪除">刪除</input>
+</form>
+{% endif %}
+
+{% endblock %}

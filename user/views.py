@@ -18,17 +18,21 @@ def user_login(request):
     message= ""
     # print(request.POST)
     if request.method == 'POST':
+        if request.POST.get("register"):
+            return redirect("register")
         username= request.POST.get("username")
-        password= request.POST.get("password")
+        password= request.POST.get("password")        
+        if username == "" or password == "":
+            message = "帳號或密碼不能為空"
         # print(username, password)
-        if not User.objects.filter(username= username):
+        elif not User.objects.filter(username= username):
             message= "無此帳號"
         else:
             user= authenticate(username= username, password= password)
             # print(user)
             if user is not None:
                 message= "登入成功!"
-                return redirect("profile")
+                return redirect("todo")
             else:
                 message= "密碼錯誤!"
 
