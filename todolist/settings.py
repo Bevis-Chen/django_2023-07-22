@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "user.apps.UserConfig",
-    "todo.apps.TodoConfig", 
+    "todo.apps.TodoConfig",
 ]
 
 MIDDLEWARE = [
@@ -60,7 +60,7 @@ ROOT_URLCONF = "todolist.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['templates'],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -82,15 +82,14 @@ WSGI_APPLICATION = "todolist.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "todolist", 
+        "NAME": "todolist",
         "USER": "root",
         "PASSWORD": "123456789",
-        "HOST": "127.0.0.1",
-        "PORT": "3306",        
+        "HOST": "database-1.cachoktrzvky.us-east-1.rds.amazonaws.com",
+        # "HOST": "127.0.0.1",
+        "PORT": "3306",
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -134,4 +133,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-LOGIN_URL= "/user/login/"
+LOGIN_URL = "/user/login/"
