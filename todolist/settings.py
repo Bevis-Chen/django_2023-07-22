@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-30**#7!at1emhg#yzmq3q((vq&3xvhzl6p2u@!=@$fhu62yh$8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*", "todo-django-uof2.onrender.com"]
 
 
 # Application definition
